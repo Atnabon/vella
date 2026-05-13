@@ -1,4 +1,4 @@
-"""FYTO Ops domain events — finance operations lifecycle."""
+"""vella Ops domain events — finance operations lifecycle."""
 
 from __future__ import annotations
 
