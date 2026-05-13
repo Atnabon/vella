@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-surface: oklch(14% 0.015 250);
+  --color-surface-raised: oklch(18% 0.015 250);
+  --color-surface-overlay: oklch(22% 0.015 250);
+  --color-accent: oklch(62% 0.21 220);
+  --color-accent-muted: oklch(38% 0.12 220);
+  --color-success: oklch(65% 0.19 145);
+  --color-warning: oklch(75% 0.18 80);
+  --color-danger: oklch(62% 0.22 25);
+  --color-text: oklch(94% 0.005 250);
+  --color-text-muted: oklch(65% 0.01 250);
+
+  --duration-fast: 120ms;
+  --duration-normal: 250ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", system-ui, sans-serif; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: oklch(30% 0.015 250); border-radius: 3px; }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-slate-800 bg-slate-900 p-5;
+  }
+  .card-sm {
+    @apply rounded-lg border border-slate-800 bg-slate-900 p-4;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-[120ms];
+  }
+  .btn-primary {
+    @apply btn bg-sky-500 text-white hover:bg-sky-400 active:bg-sky-600;
+  }
+  .btn-ghost {
+    @apply btn text-slate-400 hover:bg-slate-800 hover:text-slate-100;
+  }
+  .btn-danger {
+    @apply btn bg-red-500/10 text-red-400 hover:bg-red-500/20;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+  }
+  .badge-green  { @apply badge bg-emerald-500/15 text-emerald-400; }
+  .badge-yellow { @apply badge bg-amber-500/15 text-amber-400; }
+  .badge-red    { @apply badge bg-red-500/15 text-red-400; }
+  .badge-blue   { @apply badge bg-sky-500/15 text-sky-400; }
+  .badge-slate  { @apply badge bg-slate-500/15 text-slate-400; }
+  .input {
+    @apply w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500;
+  }
+  .table-row-hover {
+    @apply transition-colors duration-[80ms] hover:bg-slate-800/60;
+  }
+}
